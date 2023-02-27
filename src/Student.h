@@ -1,5 +1,7 @@
 #include <string>
 using namespace std;
+
+#pragma once
 class Student
 {
 private:

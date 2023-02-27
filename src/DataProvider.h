@@ -4,6 +4,7 @@
 #include "Teacher.h"
 using namespace std;
 
+#pragma once
 class DataProvider
 {
 public:
