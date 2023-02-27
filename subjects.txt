@@ -1,12 +1,18 @@
 ING-101
+LCA1-2
 Intro a la programación
 ING-102
+LCA1-3
 Programación I
 ING-103
+LCA1-7
 Programación II
 ING-111
+LCA1-1
 Base de Datos
 ING-112
+LCA1-4
 Base de Datos II
 ING-113
+LCA1-4
 Arquitecturas de Software
