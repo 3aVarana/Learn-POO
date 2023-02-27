@@ -4,13 +4,26 @@ using namespace std;
 
 void University::start()
 {
+    cout << "University started...\n";
     loadStudents();
     loadTeachers();
+
+    showStudents();
+    showTeachers();
 }
 
 void University::loadStudents()
 {
-    vector<Student> students = dataProvider.loadStudentsFrom("students.txt");
+    students = dataProvider.loadStudentsFrom("students.txt");
+}
+
+void University::loadTeachers()
+{
+    teachers = dataProvider.loadTeachersFrom("teachers.txt");
+}
+
+void University::showStudents()
+{
     cout << "\nStudents\n";
     for (Student student : students)
     {
@@ -18,9 +31,8 @@ void University::loadStudents()
     }
 }
 
-void University::loadTeachers()
+void University::showTeachers()
 {
-    vector<Teacher> teachers = dataProvider.loadTeachersFrom("teachers.txt");
     cout << "\nTeachers\n";
     for (Teacher teacher : teachers)
     {

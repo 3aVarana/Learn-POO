@@ -12,6 +12,8 @@ private:
 
     void loadStudents();
     void loadTeachers();
+    void showStudents();
+    void showTeachers();
 
 public:
     void start();
