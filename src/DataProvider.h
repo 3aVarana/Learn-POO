@@ -1,14 +1,12 @@
 #include <string>
 #include <vector>
 #include "Student.h"
+#include "Teacher.h"
 using namespace std;
 
 class DataProvider
 {
-private:
-    string filename;
-
 public:
-    DataProvider(string filename);
-    vector<Student> loadStudents();
+    vector<Student> loadStudentsFrom(string filename);
+    vector<Teacher> loadTeachersFrom(string filename);
 };
