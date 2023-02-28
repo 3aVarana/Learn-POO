@@ -34,7 +34,7 @@ void University::showStudents()
     cout << "\nStudents\n";
     for (Student student : students)
     {
-        cout << student.getName() << endl;
+        cout << student.getId() << " - " << student.getName() << endl;
     }
 }
 
@@ -43,15 +43,15 @@ void University::showTeachers()
     cout << "\nTeachers\n";
     for (Teacher teacher : teachers)
     {
-        cout << teacher.getName() << endl;
+        cout << teacher.getId() << " - " << teacher.getName() << endl;
     }
 }
 
 void University::showSubjects()
 {
-    cout << "Subjects\n";
+    cout << "\nSubjects\n";
     for (Subject subject : subjects)
     {
-        cout << subject.getName() << endl;
+        cout << subject.getCode() << " - " << subject.getClassroom() << " - " << subject.getName() << endl;
     }
 }
