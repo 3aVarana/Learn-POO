@@ -1,8 +1,50 @@
-101
-Roberta Metsola
-102
-Charles Michel
-103
-Donald Tusk
-104
-Jeroen Dijsselbloem
+6001
+Lara Aldobrandi
+6002
+Greca Foletti
+6003
+Corrado Beccaria-Bresciani
+6004
+Eleanora Argenti
+6005
+Eva Marino
+6006
+Dott. Raffaellino Barese
+6007
+Alfio Grimani
+6008
+Ferdinando Sibilia
+6009
+Veronica Collina
+6010
+Federica Mussolini
+6011
+Germana Babati
+6012
+Alessia Muratori
+6012
+Sig. Fredo Muti
+6014
+Sig. Coriolano Paoletti
+6015
+Sig. Flavio Gibilisco
+6016
+Ferdinando Trentin
+6017
+Gianni Brunelleschi
+6018
+Gloria Maggioli
+6019
+Natalia Metella
+6020
+Sig.ra Vittoria Ottino
+6021
+Beppe Zanzi
+6022
+Chiara Marconi
+6023
+Marcella Duodo
+6024
+Alfio Pisani
+6025
+Oreste Barberini
