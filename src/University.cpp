@@ -7,9 +7,11 @@ void University::start()
     cout << "University started...\n";
     loadStudents();
     loadTeachers();
+    loadSubjects();
 
     showStudents();
     showTeachers();
+    showSubjects();
 }
 
 void University::loadStudents()
@@ -20,6 +22,11 @@ void University::loadStudents()
 void University::loadTeachers()
 {
     teachers = dataProvider.loadTeachersFrom("teachers.txt");
+}
+
+void University::loadSubjects()
+{
+    subjects = dataProvider.loadSubjectsFrom("subjects.txt");
 }
 
 void University::showStudents()
@@ -37,5 +44,14 @@ void University::showTeachers()
     for (Teacher teacher : teachers)
     {
         cout << teacher.getName() << endl;
+    }
+}
+
+void University::showSubjects()
+{
+    cout << "Subjects\n";
+    for (Subject subject : subjects)
+    {
+        cout << subject.getName() << endl;
     }
 }

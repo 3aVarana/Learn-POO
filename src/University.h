@@ -1,5 +1,3 @@
-#include "Student.h"
-#include "Teacher.h"
 #include "DataProvider.h"
 
 #pragma once
@@ -9,11 +7,15 @@ private:
     DataProvider dataProvider;
     vector<Student> students;
     vector<Teacher> teachers;
+    vector<Subject> subjects;
 
     void loadStudents();
     void loadTeachers();
+    void loadSubjects();
+    
     void showStudents();
     void showTeachers();
+    void showSubjects();
 
 public:
     void start();

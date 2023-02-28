@@ -36,3 +36,20 @@ vector<Teacher> DataProvider::loadTeachersFrom(string filename)
 
     return teachers;
 }
+
+vector<Subject> DataProvider::loadSubjectsFrom(string filename)
+{
+    vector<Subject> subjects;
+    ifstream file(filename);
+
+    string code, classroom, name;
+    while (file.good())
+    {
+        getline(file, code);
+        getline(file, classroom);
+        getline(file, name);
+        subjects.push_back(Subject(code, classroom, name));
+    }
+
+    return subjects;
+}
