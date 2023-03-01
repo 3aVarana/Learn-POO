@@ -10,7 +10,7 @@ using namespace std;
 class DataProvider
 {
 private:
-    string studentFile = "students.data";
+    string studentFile = "students.txt";
     string teacherFile = "teachers.txt";
     string subjectFile = "subjects.txt";
 

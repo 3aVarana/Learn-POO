@@ -22,14 +22,6 @@ public:
         this->name = name;
     }
 
-    ~Subject()
-    {
-        if (classroom != nullptr)
-        {
-            delete classroom;
-        }
-    }
-
     string getCode()
     {
         return code;
@@ -49,6 +41,4 @@ public:
     {
         return name;
     }
-
-    void assignTeacher(Tea)
 };
