@@ -1,4 +1,7 @@
-class Circle
+#include "Figure.h"
+
+#pragma once
+class Circle : public Figure
 {
 private:
     float pi = 3.1416f;
@@ -8,5 +11,5 @@ public:
     Circle(float radius);
     float getRadius();
     float getArea();
-    float getCircumference();
+    float getPerimeter();
 };

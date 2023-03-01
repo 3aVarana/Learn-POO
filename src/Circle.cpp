@@ -15,7 +15,7 @@ float Circle::getArea()
     return pi * radius * radius;
 }
 
-float Circle::getCircumference()
+float Circle::getPerimeter()
 {
     return 2 * pi * radius;
 }
