@@ -15,3 +15,8 @@ string Teacher::getName()
 {
     return name;
 }
+
+void Teacher::setName(string newName)
+{
+    name = newName;
+}

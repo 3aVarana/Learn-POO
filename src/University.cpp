@@ -10,9 +10,10 @@ void University::start()
     loadSubjects();
 
     // showStudents();
-    // showTeachers();
+    showTeachers();
     assignTeacherToSubject();
     showSubjects();
+    showTeachers();
 }
 
 void University::loadStudents()
@@ -68,8 +69,10 @@ void University::showSubjects()
 
 void University::assignTeacherToSubject()
 {
-    for (int i = 0; i < subjects.size(); i++)
+    for (int i = 0; i < 5; i++)
     {
-        subjects[i].assignTeacher(&teachers[i]);
+        subjects[i].assignTeacher(&teachers[0]);
     }
+    cout << "Change teacher's name of first teacher\n";
+    teachers[0].setName("Andres Arana");
 }

@@ -12,4 +12,5 @@ public:
     Teacher(int id, string name);
     int getId();
     string getName();
+    void setName(string newName);
 };
