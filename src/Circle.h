@@ -8,8 +8,23 @@ private:
     float radius;
 
 public:
-    Circle(float radius);
-    float getRadius();
-    float getArea();
-    float getPerimeter();
+    Circle(float radius) : Figure()
+    {
+        this->radius = radius;
+    }
+
+    float getRadius()
+    {
+        return radius;
+    }
+
+    float getArea() override
+    {
+        return pi * radius * radius;
+    }
+
+    float getPerimeter() override
+    {
+        return 2 * pi * radius;
+    }
 };

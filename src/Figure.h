@@ -2,6 +2,15 @@
 class Figure
 {
 public:
-    float getArea();
-    float getPerimeter();
+    virtual float getArea()
+    {
+        return 0;
+    }
+
+    virtual float getPerimeter()
+    {
+        return 0;
+    }
+
+    virtual ~Figure() {}
 };

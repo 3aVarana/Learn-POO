@@ -1,14 +1,27 @@
+#pragma once
+
 #include "Figure.h"
 
-#pragma once
 class Square : public Figure
 {
 private:
     float side;
 
 public:
-    Square(float side);
-    float getSide();
-    float getArea();
-    float getPerimeter();
+    Square(float side) : Figure()
+    {
+        this->side = side;
+    }
+    float getSide()
+    {
+        return side;
+    }
+    float getArea() override
+    {
+        return side * side;
+    }
+    float getPerimeter() override
+    {
+        return 4 * side;
+    }
 };
