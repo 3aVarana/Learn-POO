@@ -9,7 +9,7 @@ private:
     vector<string> assets;
 
 public:
-    Classroom(char building, char floor, char number, vector<string> assets = vector<string>());
+    Classroom(char building, char floor, char number, vector<string> assets);
     char getBuilding();
     char getFloor();
     char getNumber();

@@ -51,7 +51,7 @@ vector<Subject> DataProvider::loadSubjectsFrom(string filename)
         getline(file, classroomStr);
         getline(file, name);
 
-        classroom = new Classroom(classroomStr[0], classroomStr[2], classroomStr[4]);
+        classroom = new Classroom(classroomStr[0], classroomStr[2], classroomStr[4], vector<string>());
         subjects.push_back(Subject(code, classroom, name));
     }
 
