@@ -64,8 +64,16 @@ public:
             getline(file, classroomLine);
             getline(file, name);
 
-            Classroom classroom(classroomLine[0], classroomLine[3], classroomLine[6]);
-
+            Classroom *classroom;
+            
+            if (classroomLine == "virtual")
+            {
+                classroom = nullptr;
+            }
+            else
+            {
+                classroom = new Classroom(classroomLine[0], classroomLine[3], classroomLine[6]);
+            }
             subjects.push_back(Subject(code, classroom, name));
         }
 
