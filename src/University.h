@@ -12,10 +12,12 @@ private:
     void loadStudents();
     void loadTeachers();
     void loadSubjects();
-    
+
     void showStudents();
     void showTeachers();
     void showSubjects();
+
+    void assignTeacherToSubject();
 
 public:
     void start();

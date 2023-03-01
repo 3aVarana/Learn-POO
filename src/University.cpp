@@ -9,8 +9,9 @@ void University::start()
     loadTeachers();
     loadSubjects();
 
-    showStudents();
-    showTeachers();
+    // showStudents();
+    // showTeachers();
+    assignTeacherToSubject();
     showSubjects();
 }
 
@@ -53,5 +54,22 @@ void University::showSubjects()
     for (Subject subject : subjects)
     {
         cout << subject.getCode() << " - " << subject.getClassroom() << " - " << subject.getName() << endl;
+        Teacher *teacher = subject.getTeacher();
+        if (teacher != nullptr)
+        {
+            cout << "Assigned Teacher is: " << teacher->getName() << endl;
+        }
+        else
+        {
+            cout << "Not assigned teacher\n";
+        }
+    }
+}
+
+void University::assignTeacherToSubject()
+{
+    for (int i = 0; i < subjects.size(); i++)
+    {
+        subjects[i].assignTeacher(&teachers[i]);
     }
 }

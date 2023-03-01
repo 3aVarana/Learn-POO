@@ -5,6 +5,7 @@ Subject::Subject(string code, Classroom *classroom, string name)
     this->code = code;
     this->classroom = classroom;
     this->name = name;
+    this->teacher = nullptr;
 }
 
 string Subject::getCode()
@@ -24,4 +25,14 @@ string Subject::getClassroom()
 string Subject::getName()
 {
     return name;
+}
+
+void Subject::assignTeacher(Teacher *teacher)
+{
+    this->teacher = teacher;
+}
+
+Teacher *Subject::getTeacher()
+{
+    return teacher;
 }
