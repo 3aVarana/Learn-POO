@@ -1,13 +1,15 @@
 #include <string>
+#include "Classroom.h"
 using namespace std;
 
 class Subject
 {
 private:
-    string code, classroom, name;
+    string code, name;
+    Classroom *classroom;
 
 public:
-    Subject(string code, string classroom, string name);
+    Subject(string code, Classroom *classroom, string name);
     string getCode();
     string getClassroom();
     string getName();

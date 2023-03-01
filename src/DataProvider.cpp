@@ -42,12 +42,16 @@ vector<Subject> DataProvider::loadSubjectsFrom(string filename)
     vector<Subject> subjects;
     ifstream file(filename);
 
-    string code, classroom, name;
+    string code, classroomStr, name;
+    Classroom *classroom;
+
     while (file.good())
     {
         getline(file, code);
-        getline(file, classroom);
+        getline(file, classroomStr);
         getline(file, name);
+
+        classroom = new Classroom(classroomStr[0], classroomStr[2], classroomStr[4]);
         subjects.push_back(Subject(code, classroom, name));
     }
 

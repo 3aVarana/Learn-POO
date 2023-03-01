@@ -1,45 +1,45 @@
 ING-101
-LCA1-2
+A_1_2
 Intro a la programaci�n
 ING-102
-LCA1-3
+A_1_3
 Programaci�n I
 ING-103
-LCA1-7
+A_2_7
 Programaci�n II
 ING-111
-LCA1-1
+A_3_1
 Base de Datos
 ING-112
-LCA1-4
+B_1_1
 Base de Datos II
 ING-113
-LCA1-4
+B_1_2
 Arquitecturas de Software
 ING-201
-LCA1-4
+B_2_3
 Sistemas de Informacion I
 ING-202
-LCA1-6
+C_2_1
 Sistemas de Informacion II
 ING-203
-LCA1-8
+C_2_2
 Sistemas de Informacion III
 ING-315
-LCA1-9
+C_2_3
 Redes de computadoras
 ING-320
-LCA1-1
+D_4_1
 Internet de las Cosas
 ING-401
-LCA1-2
+D_4_2
 Sistemas Web
 ING-420
-LCA1-4
+D_1_1
 Taller de Programacion
 ING-500
-LCA1-6
+D_4_6
 Taller de grado I
 ING-501
-LCA1-7
+D_4_7
 Taller de grado II

@@ -5,10 +5,13 @@ using namespace std;
 class Classroom
 {
 private:
-    string building;
-    int floor, number;
+    char building, floor, number;
     vector<string> assets;
 
 public:
-    Classroom(string building, int floor, int number, vector<string> assets);
+    Classroom(char building, char floor, char number, vector<string> assets = vector<string>());
+    char getBuilding();
+    char getFloor();
+    char getNumber();
+    vector<string> getAssets();
 };
