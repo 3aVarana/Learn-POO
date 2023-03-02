@@ -10,7 +10,7 @@ private:
     Classroom *classroom;
     vector<Subject> requiredSubjects;
     Teacher *assignedTeacher;
-    Teacher *suplentedTeacher;
+    Teacher *substituteTeacher;
 
     vector<Student> students;
 
@@ -26,6 +26,7 @@ public:
     {
         return code;
     }
+
     string getClassroom()
     {
         if (classroom == nullptr)
@@ -37,8 +38,32 @@ public:
             return classroom->getCompleteName();
         }
     }
+
     string getName()
     {
         return name;
+    }
+
+    void assignTeacher(Teacher *assignedTeacher)
+    {
+        this->assignedTeacher = assignedTeacher;
+    }
+
+    void assignSubstituteTeacher(Teacher *substituteTeacher)
+    {
+        this->substituteTeacher = substituteTeacher;
+    }
+
+    void addStudent(Student student)
+    {
+        students.push_back(student);
+    }
+
+    void freeClassroomMemory()
+    {
+        if (classroom != nullptr)
+        {
+            delete classroom;
+        }
     }
 };

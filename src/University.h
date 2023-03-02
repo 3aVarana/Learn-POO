@@ -5,7 +5,6 @@
 class University
 {
 private:
-
     DataProvider dataProvider;
     vector<Student> students;
     vector<Teacher> teachers;
@@ -60,5 +59,13 @@ public:
         showStudents();
         showTeachers();
         showSubjects();
+    }
+
+    ~University()
+    {
+        for (Subject subject : subjects)
+        {
+            subject.freeClassroomMemory();
+        }
     }
 };
