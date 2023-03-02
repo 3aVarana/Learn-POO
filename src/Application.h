@@ -3,6 +3,8 @@
 #include <vector>
 #include "Circle.h"
 #include "Square.h"
+#include "Triangle.h"
+#include "Rectangle.h"
 
 using namespace std;
 
@@ -12,15 +14,21 @@ public:
     void run()
     {
         vector<Figure *> figures;
-        Circle *c1 = new Circle(10.0f);
-        Square *s1 = new Square(10.0f);
-        figures.push_back(c1);
-        figures.push_back(s1);
+
+        figures.push_back(new Circle(5.0f));
+        figures.push_back(new Square(5.0f));
+        figures.push_back(new Circle(15.0f));
+        figures.push_back(new Square(15.0f));
+
+        figures.push_back(new Triangle(3.0f, 4.0f, 5.0f));
+        figures.push_back(new Rectangle(2.0f, 8.0f));
+        figures.push_back(new Triangle(6.0f, 8.0f, 10.0f));
+        figures.push_back(new Rectangle(5.0f, 13.0f));
 
         for (Figure *figure : figures)
         {
-            cout << "Figure area is: " << (*figure).getArea() << endl;
-            cout << "Figure perimeter is: " << (*figure).getPerimeter() << endl;
+            cout << "Area: " << figure->getArea() << endl;
+            cout << "Perimeter: " << (*figure).getPerimeter() << endl;
         }
 
         for (Figure *figure : figures)

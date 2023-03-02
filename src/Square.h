@@ -12,14 +12,17 @@ public:
     {
         this->side = side;
     }
+
     float getSide()
     {
         return side;
     }
+
     float getArea() override
     {
         return side * side;
     }
+
     float getPerimeter() override
     {
         return 4 * side;

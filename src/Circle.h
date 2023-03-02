@@ -1,6 +1,7 @@
+#pragma once
+
 #include "Figure.h"
 
-#pragma once
 class Circle : public Figure
 {
 private:
