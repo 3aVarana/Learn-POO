@@ -50,9 +50,9 @@ public:
 
         return teachers;
     }
-    vector<Subject> loadSubjects()
+    vector<Subject *> loadSubjects()
     {
-        vector<Subject> subjects;
+        vector<Subject *> subjects;
         ifstream file(subjectFile);
 
         string code, name;
@@ -65,7 +65,7 @@ public:
             getline(file, name);
 
             Classroom *classroom;
-            
+
             if (classroomLine == "virtual")
             {
                 classroom = nullptr;
@@ -74,7 +74,7 @@ public:
             {
                 classroom = new Classroom(classroomLine[0], classroomLine[3], classroomLine[6]);
             }
-            subjects.push_back(Subject(code, classroom, name));
+            subjects.push_back(new Subject(code, classroom, name));
         }
 
         return subjects;

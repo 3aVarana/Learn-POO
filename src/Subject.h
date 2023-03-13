@@ -10,9 +10,8 @@ private:
     Classroom *classroom;
     vector<Subject> requiredSubjects;
     Teacher *assignedTeacher;
-    Teacher *substituteTeacher;
 
-    vector<Student> students;
+    vector<Student *> students;
 
 public:
     Subject(string code, Classroom *classroom, string name)
@@ -20,6 +19,14 @@ public:
         this->code = code;
         this->classroom = classroom;
         this->name = name;
+    }
+
+    ~Subject()
+    {
+        if (classroom != nullptr)
+        {
+            delete classroom;
+        }
     }
 
     string getCode()
@@ -47,11 +54,6 @@ public:
     void assignTeacher(Teacher *assignedTeacher)
     {
         this->assignedTeacher = assignedTeacher;
-    }
-
-    void assignSubstituteTeacher(Teacher *substituteTeacher)
-    {
-        this->substituteTeacher = substituteTeacher;
     }
 
     void addStudent(Student student)

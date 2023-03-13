@@ -1,25 +1,22 @@
+#pragma once
+
 #include <string>
 using namespace std;
 
-#pragma once
-class Student
+#include "Person.h"
+
+class Student : public Person
 {
 private:
-    int id;
-    string name;
+    string major;
 
 public:
-    Student(int id, string name)
+    Student(int id, string name) : Person(id, name)
     {
-        this->id = id;
-        this->name = name;
     }
-    int getId()
+
+    string getMajor()
     {
-        return id;
-    }
-    string getName()
-    {
-        return name;
+        return major;
     }
 };

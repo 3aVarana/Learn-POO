@@ -8,7 +8,7 @@ private:
     DataProvider dataProvider;
     vector<Student> students;
     vector<Teacher> teachers;
-    vector<Subject> subjects;
+    vector<Subject *> subjects;
 
     void loadStudents()
     {
@@ -42,10 +42,15 @@ private:
     void showSubjects()
     {
         cout << "\nSubjects\n";
-        for (Subject subject : subjects)
+        for (Subject *subject : subjects)
         {
-            cout << subject.getCode() << " - " << subject.getClassroom() << " - " << subject.getName() << endl;
+            cout << subject->getCode() << " - " << subject->getClassroom() << " - " << subject->getName() << endl;
         }
+    }
+
+    void assignTeacherToSubject()
+    {
+        
     }
 
 public:
@@ -63,9 +68,9 @@ public:
 
     ~University()
     {
-        for (Subject subject : subjects)
+        for (Subject *subject : subjects)
         {
-            subject.freeClassroomMemory();
+            delete subject;
         }
     }
 };

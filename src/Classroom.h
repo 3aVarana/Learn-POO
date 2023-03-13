@@ -10,19 +10,14 @@ private:
     char building;
     char floor;
     char number;
-    vector<string> assets;
 
 public:
-    Classroom()
-    {
-    }
 
-    Classroom(char building, char floor, char number, vector<string> assets = vector<string>())
+    Classroom(char building, char floor, char number)
     {
         this->building = building;
         this->floor = floor;
         this->number = number;
-        this->assets = assets;
     }
 
     string getCompleteName()

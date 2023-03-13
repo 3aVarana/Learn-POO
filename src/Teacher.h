@@ -1,25 +1,30 @@
+#pragma once
+
 #include <string>
 using namespace std;
 
-#pragma once
-class Teacher
+#include "Person.h"
+
+enum TeacherType
+{
+    horario,
+    medioTiempo,
+    tiempoCompleto
+};
+
+class Teacher : public Person
 {
 private:
-    int id;
-    string name;
+    TeacherType type;
 
 public:
-    Teacher(int id, string name)
+    Teacher(int id, string name) : Person(id, name)
     {
-        this->id = id;
-        this->name = name;
+        this->type = TeacherType::horario;
     }
-    int getId()
+
+    TeacherType getType()
     {
-        return id;
-    }
-    string getName()
-    {
-        return name;
+        return type;
     }
 };
