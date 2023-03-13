@@ -13,9 +13,6 @@ private:
     vector<string> assets;
 
 public:
-    Classroom()
-    {
-    }
 
     Classroom(char building, char floor, char number, vector<string> assets = vector<string>())
     {
