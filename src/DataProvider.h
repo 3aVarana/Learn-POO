@@ -15,9 +15,9 @@ private:
     string subjectFile = "subjects.txt";
 
 public:
-    vector<Student> loadStudents()
+    vector<Student *> loadStudents()
     {
-        vector<Student> students;
+        vector<Student *> students;
         ifstream file(studentFile);
 
         int id;
@@ -27,15 +27,15 @@ public:
             file >> id;
             getline(file, name);
             getline(file, name);
-            students.push_back(Student(id, name));
+            students.push_back(new Student(id, name));
         }
 
         return students;
     }
 
-    vector<Teacher> loadTeachers()
+    vector<Teacher *> loadTeachers()
     {
-        vector<Teacher> teachers;
+        vector<Teacher *> teachers;
         ifstream file(teacherFile);
 
         int id;
@@ -45,7 +45,7 @@ public:
             file >> id;
             getline(file, name);
             getline(file, name);
-            teachers.push_back(Teacher(id, name));
+            teachers.push_back(new Teacher(id, name));
         }
 
         return teachers;

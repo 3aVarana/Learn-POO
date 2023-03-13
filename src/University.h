@@ -6,8 +6,8 @@ class University
 {
 private:
     DataProvider dataProvider;
-    vector<Student> students;
-    vector<Teacher> teachers;
+    vector<Student *> students;
+    vector<Teacher *> teachers;
     vector<Subject *> subjects;
 
     void loadStudents()
@@ -26,17 +26,17 @@ private:
     void showStudents()
     {
         cout << "\nStudents\n";
-        for (Student student : students)
+        for (Student *student : students)
         {
-            cout << student.getId() << " - " << student.getName() << endl;
+            cout << student->getId() << " - " << student->getName() << endl;
         }
     }
     void showTeachers()
     {
         cout << "\nTeachers\n";
-        for (Teacher teacher : teachers)
+        for (Teacher *teacher : teachers)
         {
-            cout << teacher.getId() << " - " << teacher.getName() << endl;
+            cout << teacher->getId() << " - " << teacher->getName() << endl;
         }
     }
     void showSubjects()
@@ -50,7 +50,6 @@ private:
 
     void assignTeacherToSubject()
     {
-        
     }
 
 public:
@@ -71,6 +70,14 @@ public:
         for (Subject *subject : subjects)
         {
             delete subject;
+        }
+        for (Teacher *teacher : teachers)
+        {
+            delete teacher;
+        }
+        for (Student *student : students)
+        {
+            delete student;
         }
     }
 };

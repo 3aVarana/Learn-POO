@@ -8,7 +8,7 @@ class Subject
 private:
     string code, name;
     Classroom *classroom;
-    vector<Subject> requiredSubjects;
+    vector<Subject *> requiredSubjects;
     Teacher *assignedTeacher;
 
     vector<Student *> students;
@@ -56,7 +56,7 @@ public:
         this->assignedTeacher = assignedTeacher;
     }
 
-    void addStudent(Student student)
+    void addStudent(Student *student)
     {
         students.push_back(student);
     }
