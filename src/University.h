@@ -60,6 +60,23 @@ private:
         }
     }
 
+    void addNewTeacher()
+    {
+        int id;
+        string name;
+        cout << "Enter ID\n";
+        cin >> id;
+        cout << "Enter teacher's name\n";
+        cin >> name;
+        Teacher newTeacher(id, name);
+        teachers.push_back(newTeacher);
+    }
+
+    void saveData()
+    {
+        dataProvider.saveTeachers(teachers);
+    }
+
 public:
     void start()
     {
@@ -74,6 +91,10 @@ public:
             cout << "1. Show teachers\n";
             cout << "2. Show students\n";
             cout << "3. Show subjects\n";
+
+            cout << "4. Add new teacher\n";
+
+            cout << "10. Save Data\n";
             cout << "0. Salir\n";
             cin >> option;
 
@@ -89,6 +110,14 @@ public:
 
             case 3:
                 showSubjects();
+                break;
+
+            case 4:
+                addNewTeacher();
+                break;
+
+            case 10:
+                saveData();
                 break;
 
             default:

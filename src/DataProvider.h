@@ -29,6 +29,7 @@ public:
             getline(file, name);
             students.push_back(Student(id, name));
         }
+        file.close();
 
         return students;
     }
@@ -47,9 +48,11 @@ public:
             getline(file, name);
             teachers.push_back(Teacher(id, name));
         }
+        file.close();
 
         return teachers;
     }
+    
     vector<Subject> loadSubjects()
     {
         vector<Subject> subjects;
@@ -65,7 +68,7 @@ public:
             getline(file, name);
 
             Classroom *classroom;
-            
+
             if (classroomLine == "virtual")
             {
                 classroom = nullptr;
@@ -76,7 +79,19 @@ public:
             }
             subjects.push_back(Subject(code, classroom, name));
         }
+        file.close();
 
         return subjects;
+    }
+
+    void saveTeachers(vector<Teacher> teachers)
+    {
+        ofstream file(teacherFile);
+        for (Teacher teacher : teachers)
+        {
+            file << teacher.getId() << "\n";
+            file << teacher.getName() << "\n";
+        }
+        file.close();
     }
 };
