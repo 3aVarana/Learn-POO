@@ -65,6 +65,8 @@ void Application::run()
     int option;
     do
     {
+        // system("clear");
+        // How to clear the console and pause the execution
         cout << "1.Show authors\n";
         cout << "2.Show books\n";
         cout << "3.Add new author\n";
@@ -72,6 +74,8 @@ void Application::run()
         cout << "5.Add book to existing author\n";
         cout << "6.Add author to existing book\n";
         cout << "7.Edit author\n";
+        cout << "8.Edit book\n";
+        cout << "9.Show books by genre\n";
         cout << "0.Salir\n";
         cin >> option;
 
@@ -103,6 +107,14 @@ void Application::run()
 
         case 7:
             editAuthor();
+            break;
+
+        case 8:
+            editBook();
+            break;
+
+        case 9:
+            showBooksByGenre();
             break;
 
         default:
@@ -224,4 +236,31 @@ void Application::editAuthor()
 
 void Application::editBook()
 {
+    // Implement edit Book
+}
+
+void Application::showBooksByGenre()
+{
+    cout << "[0] Fiction\n";
+    cout << "[1] Historic\n";
+    cout << "[2] Educative\n";
+    cout << "[3] Unknown\n";
+    cout << "Enter genre: ";
+    int selectedGenre;
+    cin >> selectedGenre;
+
+    vector<Book *> filteredBooks;
+    for (Book *b : books)
+    {
+        if (b->getGenre() == selectedGenre)
+        {
+            filteredBooks.push_back(b);
+        }
+    }
+
+    cout << "FILETRED BOOKS\n";
+    for (Book *b : filteredBooks)
+    {
+        b->showInfo();
+    }
 }

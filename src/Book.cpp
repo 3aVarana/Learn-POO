@@ -31,7 +31,12 @@ string Book::getEditorial()
     return editorial;
 }
 
-string Book::getGenre()
+BookGenre Book::getGenre()
+{
+    return genre;
+}
+
+string Book::getGenreTitle()
 {
     switch (genre)
     {
@@ -61,7 +66,7 @@ void Book::showInfo()
 {
     cout << "Book's title: " << title << endl;
     cout << "Book's editorial: " << editorial << endl;
-    cout << "Book's genre: " << getGenre() << endl;
+    cout << "Book's genre: " << getGenreTitle() << endl;
     cout << "Athors:\n";
     for (Author *author : authors)
     {

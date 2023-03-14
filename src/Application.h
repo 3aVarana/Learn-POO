@@ -25,4 +25,6 @@ public:
     void addAuthorToBook();
     void editAuthor();
     void editBook();
+
+    void showBooksByGenre();
 };

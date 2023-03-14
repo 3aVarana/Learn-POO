@@ -29,7 +29,8 @@ public:
 
     string getTitle();
     string getEditorial();
-    string getGenre();
+    BookGenre getGenre();
+    string getGenreTitle();
     void addAuthor(Author *author);
     void showInfo();
 };
