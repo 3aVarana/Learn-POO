@@ -16,4 +16,6 @@ public:
 
     void loadData();
     void run();
+    void addNewAuthor();
+    void addNewBook();
 };

@@ -49,6 +49,8 @@ void Application::run()
     {
         cout << "1.Show authors\n";
         cout << "2.Show books\n";
+        cout << "3.Add new author\n";
+        cout << "4.Add new book\n";
         cout << "0.Salir\n";
         cin >> option;
 
@@ -70,8 +72,36 @@ void Application::run()
             }
             break;
 
+        case 3:
+            addNewAuthor();
+            break;
+
+        case 4:
+            addNewBook();
+            break;
+
         default:
             break;
         }
     } while (option != 0);
+}
+
+void Application::addNewAuthor()
+{
+    string authorName;
+    cout << "Enter author's name: ";
+    getline(cin, authorName);
+    getline(cin, authorName);
+    Author *author = new Author(authorName);
+    authors.push_back(author);
+}
+
+void Application::addNewBook()
+{
+    string bookTitle;
+    cout << "Enter book's title name: ";
+    getline(cin, bookTitle);
+    getline(cin, bookTitle);
+    Book *book = new Book(bookTitle);
+    books.push_back(book);
 }
