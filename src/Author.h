@@ -15,12 +15,9 @@ private:
 
 public:
     Author(string fullname);
-
     Author(string fullname, vector<Book *> books);
 
     void addBook(Book *book);
-
     string getName();
-
     void showInfo();
 };
