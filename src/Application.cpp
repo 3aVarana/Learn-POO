@@ -71,6 +71,7 @@ void Application::run()
         cout << "4.Add new book\n";
         cout << "5.Add book to existing author\n";
         cout << "6.Add author to existing book\n";
+        cout << "7.Edit author\n";
         cout << "0.Salir\n";
         cin >> option;
 
@@ -98,6 +99,10 @@ void Application::run()
 
         case 6:
             addAuthorToBook();
+            break;
+
+        case 7:
+            editAuthor();
             break;
 
         default:
@@ -190,4 +195,33 @@ void Application::addAuthorToBook()
 
     authors[authorPos]->addBook(books[bookPos]);
     books[bookPos]->addAuthor(authors[authorPos]);
+}
+
+void Application::editAuthor()
+{
+    int authorPos;
+    cout << "Select author to edit\n";
+    for (int i = 0; i < authors.size(); i++)
+    {
+        cout << "[" << i << "] - " << authors[i]->getName() << endl;
+    }
+    cin >> authorPos;
+
+    if (authorPos < 0 || authorPos >= authors.size())
+    {
+        cout << "Invalid option\n";
+        return;
+    }
+
+    authors[authorPos]->showInfo();
+
+    string newName;
+    cout << "Enter author's new name: ";
+    getline(cin, newName);
+    getline(cin, newName);
+    authors[authorPos]->setNewName(newName);
+}
+
+void Application::editBook()
+{
 }

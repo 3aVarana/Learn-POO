@@ -20,4 +20,5 @@ public:
     void addBook(Book *book);
     string getName();
     void showInfo();
+    void setNewName(string newName);
 };

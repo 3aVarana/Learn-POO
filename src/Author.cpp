@@ -29,3 +29,8 @@ void Author::showInfo()
     }
     cout << endl;
 }
+
+void Author::setNewName(string newName)
+{
+    fullname = newName;
+}

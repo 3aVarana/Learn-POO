@@ -23,4 +23,6 @@ public:
     void addNewBook();
     void addBookToAuthor();
     void addAuthorToBook();
+    void editAuthor();
+    void editBook();
 };
