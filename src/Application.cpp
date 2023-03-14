@@ -12,6 +12,24 @@ Application::~Application()
     }
 }
 
+void Application::showAuthors()
+{
+    cout << "AUTHORS\n";
+    for (Author *a : authors)
+    {
+        a->showInfo();
+    }
+}
+
+void Application::showBooks()
+{
+    cout << "BOOKS\n";
+    for (Book *b : books)
+    {
+        b->showInfo();
+    }
+}
+
 void Application::loadData()
 {
     authors.push_back(new Author("Edgar Allan Poe"));
@@ -51,25 +69,19 @@ void Application::run()
         cout << "2.Show books\n";
         cout << "3.Add new author\n";
         cout << "4.Add new book\n";
+        cout << "5.Add book to existing author\n";
+        cout << "6.Add author to existing book\n";
         cout << "0.Salir\n";
         cin >> option;
 
         switch (option)
         {
         case 1:
-            cout << "AUTHORS\n";
-            for (Author *a : authors)
-            {
-                a->showInfo();
-            }
+            showAuthors();
             break;
 
         case 2:
-            cout << "BOOKS\n";
-            for (Book *b : books)
-            {
-                b->showInfo();
-            }
+            showBooks();
             break;
 
         case 3:
@@ -78,6 +90,10 @@ void Application::run()
 
         case 4:
             addNewBook();
+            break;
+
+        case 5:
+            addBookToAuthor();
             break;
 
         default:
@@ -104,4 +120,70 @@ void Application::addNewBook()
     getline(cin, bookTitle);
     Book *book = new Book(bookTitle);
     books.push_back(book);
+}
+
+void Application::addBookToAuthor()
+{
+    int bookPos, authorPos;
+    cout << "Select book\n";
+    for (int i = 0; i < books.size(); i++)
+    {
+        cout << "[" << i << "] - " << books[i]->getTitle() << endl;
+    }
+    cin >> bookPos;
+
+    if (bookPos < 0 || bookPos >= books.size())
+    {
+        cout << "Invalid option\n";
+        return;
+    }
+
+    cout << "Select author\n";
+    for (int i = 0; i < authors.size(); i++)
+    {
+        cout << "[" << i << "] - " << authors[i]->getName() << endl;
+    }
+    cin >> authorPos;
+
+    if (authorPos < 0 || authorPos >= authors.size())
+    {
+        cout << "Invalid option\n";
+        return;
+    }
+
+    authors[authorPos]->addBook(books[bookPos]);
+    books[bookPos]->addAuthor(authors[authorPos]);
+}
+
+void Application::addAuthorToBook()
+{
+    int bookPos, authorPos;
+    cout << "Select author\n";
+    for (int i = 0; i < authors.size(); i++)
+    {
+        cout << "[" << i << "] - " << authors[i]->getName() << endl;
+    }
+    cin >> authorPos;
+
+    if (authorPos < 0 || authorPos >= authors.size())
+    {
+        cout << "Invalid option\n";
+        return;
+    }
+
+    cout << "Select book\n";
+    for (int i = 0; i < books.size(); i++)
+    {
+        cout << "[" << i << "] - " << books[i]->getTitle() << endl;
+    }
+    cin >> bookPos;
+
+    if (bookPos < 0 || bookPos >= books.size())
+    {
+        cout << "Invalid option\n";
+        return;
+    }
+
+    authors[authorPos]->addBook(books[bookPos]);
+    books[bookPos]->addAuthor(authors[authorPos]);
 }

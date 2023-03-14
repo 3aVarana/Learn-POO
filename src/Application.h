@@ -14,8 +14,13 @@ private:
 public:
     ~Application();
 
+    void showAuthors();
+    void showBooks();
+
     void loadData();
     void run();
     void addNewAuthor();
     void addNewBook();
+    void addBookToAuthor();
+    void addAuthorToBook();
 };
