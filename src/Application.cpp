@@ -96,6 +96,10 @@ void Application::run()
             addBookToAuthor();
             break;
 
+        case 6:
+            addAuthorToBook();
+            break;
+
         default:
             break;
         }
