@@ -7,6 +7,13 @@ using namespace std;
 
 class Application
 {
+private:
+    vector<Author *> authors;
+    vector<Book *> books;
+
 public:
+    ~Application();
+
+    void loadData();
     void run();
 };
