@@ -14,23 +14,13 @@ private:
     vector<Book *> books;
 
 public:
-    Author(string fullname) : fullname(fullname), books(vector<Book *>())
-    {
-    }
+    Author(string fullname);
 
-    Author(string fullname, vector<Book *> books) : fullname(fullname), books(books)
-    {
-    }
+    Author(string fullname, vector<Book *> books);
 
-    void addBook(Book *book)
-    {
-        books.push_back(book);
-    }
+    void addBook(Book *book);
 
-    string getName()
-    {
-        return fullname;
-    }
+    string getName();
 
     void showInfo();
 };
