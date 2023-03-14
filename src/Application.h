@@ -27,4 +27,5 @@ public:
     void editBook();
 
     void showBooksByGenre();
+    void searchBooksByTitle();
 };

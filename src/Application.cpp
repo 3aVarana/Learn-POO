@@ -76,6 +76,7 @@ void Application::run()
         cout << "7.Edit author\n";
         cout << "8.Edit book\n";
         cout << "9.Show books by genre\n";
+        cout << "10.Search books ty title\n";
         cout << "0.Salir\n";
         cin >> option;
 
@@ -115,6 +116,10 @@ void Application::run()
 
         case 9:
             showBooksByGenre();
+            break;
+
+        case 10:
+            searchBooksByTitle();
             break;
 
         default:
@@ -259,6 +264,29 @@ void Application::showBooksByGenre()
     }
 
     cout << "FILETRED BOOKS\n";
+    for (Book *b : filteredBooks)
+    {
+        b->showInfo();
+    }
+}
+
+void Application::searchBooksByTitle()
+{
+    string title;
+    cout << "Enter book's name: ";
+    getline(cin, title);
+    getline(cin, title);
+
+    vector<Book *> filteredBooks;
+    for (Book *b : books)
+    {
+        if (b->getTitle().find(title) != string::npos)
+        {
+            filteredBooks.push_back(b);
+        }
+    }
+
+    cout << "MATCH BOOKS\n";
     for (Book *b : filteredBooks)
     {
         b->showInfo();
