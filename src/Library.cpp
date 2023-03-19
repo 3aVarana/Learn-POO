@@ -83,8 +83,7 @@ void Library::showAuthors()
     cout << "Authors" << endl;
     for (Author *a : authors)
     {
-        cout << a->fullname << endl;
-        cout << a->nationality << endl;
+        a->showInfo();
     }
     cout << endl;
 }

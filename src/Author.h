@@ -9,5 +9,6 @@ public:
 	string fullname, nationality;
 
 	Author(string fullname, string nationality);
-};
 
+	void showInfo();
+};
