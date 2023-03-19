@@ -1,24 +1,13 @@
 #pragma once
 
-#include <iostream>
 #include <string>
-#include <vector>
 using namespace std;
-
-class Book;
 
 class Author
 {
-private:
-    string fullname;
-    vector<Book *> books;
-
 public:
-    Author(string fullname);
-    Author(string fullname, vector<Book *> books);
+	string fullname, nationality;
 
-    void addBook(Book *book);
-    string getName();
-    void showInfo();
-    void setNewName(string newName);
+	Author(string fullname, string nationality);
 };
+

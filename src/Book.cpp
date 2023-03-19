@@ -1,76 +1,26 @@
 #include "Book.h"
+#include <iostream>
 
-Book::Book(string title)
+Book::Book(string title, string editorial, int publishYear)
 {
-    this->title = title;
-    this->genre = BookGenre::unknown;
-    this->authors = vector<Author *>();
+	this->title = title;
+	this->editorial = editorial;
+	this->publishYear = publishYear;
 }
 
-Book::Book(string title, BookGenre genre)
+void Book::addAuthor(Author* author)
 {
-    this->title = title;
-    this->genre = genre;
-    this->authors = vector<Author *>();
-}
-
-Book::Book(string title, BookGenre genre, vector<Author *> authors)
-{
-    this->title = title;
-    this->genre = genre;
-    this->authors = authors;
-}
-
-string Book::getTitle()
-{
-    return title;
-}
-
-string Book::getEditorial()
-{
-    return editorial;
-}
-
-BookGenre Book::getGenre()
-{
-    return genre;
-}
-
-string Book::getGenreTitle()
-{
-    switch (genre)
-    {
-    case fiction:
-        return "Fiction";
-        break;
-
-    case historic:
-        return "Historic";
-        break;
-
-    case educative:
-        return "Educative";
-        break;
-
-    default:
-        return "Unknown";
-    }
-}
-
-void Book::addAuthor(Author *author)
-{
-    authors.push_back(author);
+	authors.push_back(author);
 }
 
 void Book::showInfo()
 {
-    cout << "Book's title: " << title << endl;
-    cout << "Book's editorial: " << editorial << endl;
-    cout << "Book's genre: " << getGenreTitle() << endl;
-    cout << "Athors:\n";
-    for (Author *author : authors)
-    {
-        cout << author->getName() << endl;
-    }
-    cout << endl;
+	cout << "Book" << endl;
+	cout << title << endl;
+	cout << editorial << endl;
+	cout << publishYear << endl;
+	for (Author* a : authors)
+	{
+		cout << a->fullname << endl;
+	}
 }
