@@ -1,4 +1,5 @@
 #include "Book.h"
+#include "Author.h"
 #include <iostream>
 
 Book::Book(string title, string editorial, int publishYear)

@@ -8,7 +8,7 @@ class Library
 {
 private:
     vector<Author *> authors;
-    vector<Book> books;
+    vector<Book *> books;
 
 public:
     ~Library();
@@ -17,4 +17,8 @@ public:
     void showMenu();
     void showBooks();
     void showAuthors();
+    void addNewAuthor();
+
+    void addBookToAuthor();
+    void editAuthor();
 };
