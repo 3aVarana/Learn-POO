@@ -4,7 +4,7 @@ using namespace std;
 
 class Animal
 {
-private:
+protected:
     int identifier;
     string name;
     float age;
