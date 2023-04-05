@@ -14,6 +14,6 @@ void Bird::showInfo()
 {
     cout << "Bird info\n";
     Animal::showInfo();
-    cout << "Bird's wings size: " << wingsSize << endl;
+    cout << "Bird's wings size: " << wingsSize << " cm." << endl;
     cout << "Bird's wings color: " << wingsColor << endl;
 }
