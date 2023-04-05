@@ -8,7 +8,7 @@ private:
     float a, b, h;
 
 public:
-    Triangle(float a, float b, float h) : Figure()
+    Triangle(float a, float b, float h)
     {
         this->a = a;
         this->b = b;

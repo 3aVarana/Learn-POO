@@ -9,14 +9,9 @@ private:
     float radius;
 
 public:
-    Circle(float radius) : Figure()
+    Circle(float radius)
     {
         this->radius = radius;
-    }
-
-    float getRadius()
-    {
-        return radius;
     }
 
     float getArea() override

@@ -8,7 +8,7 @@ private:
     float smallSide, bigSide;
 
 public:
-    Rectangle(float smallSide, float bigSide) : Figure()
+    Rectangle(float smallSide, float bigSide)
     {
         this->smallSide = smallSide;
         this->bigSide = bigSide;

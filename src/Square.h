@@ -8,14 +8,9 @@ private:
     float side;
 
 public:
-    Square(float side) : Figure()
+    Square(float side)
     {
         this->side = side;
-    }
-
-    float getSide()
-    {
-        return side;
     }
 
     float getArea() override
