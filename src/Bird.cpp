@@ -1,6 +1,10 @@
 #include "Bird.h"
 #include <iostream>
 
+Bird::Bird(int identifier, string name, float age, float wingsSize, string wingsColor) : Animal(identifier, name, age), wingsSize(wingsSize), wingsColor(wingsColor)
+{
+}
+
 void Bird::fly()
 {
     cout << "Bird is flying...\n";

@@ -1,6 +1,10 @@
 #include "Dog.h"
 #include <iostream>
 
+Dog::Dog(int identifier, string name, float age, string race, bool hasPedigree) : Animal(identifier, name, age), race(race), hasPedigree(hasPedigree)
+{
+}
+
 void Dog::walk()
 {
     cout << "Dog is walking...\n";

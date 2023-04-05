@@ -8,6 +8,8 @@ private:
     bool hasPedigree;
 
 public:
+    Dog(int identifier, string name, float age, string race, bool hasPedigree);
+
     void walk();
     void showInfo();
 };

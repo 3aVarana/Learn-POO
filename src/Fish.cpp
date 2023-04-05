@@ -1,6 +1,10 @@
 #include "Fish.h"
 #include <iostream>
 
+Fish::Fish(int identifier, string name, float age, int finNumber, string habitat) : Animal(identifier, name, age), finNumber(finNumber), habitat(habitat)
+{
+}
+
 void Fish::swim()
 {
     cout << "Fish is swimming...\n";
