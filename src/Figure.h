@@ -12,6 +12,4 @@ public:
     {
         return 0;
     }
-
-    virtual ~Figure() {}
 };
