@@ -14,13 +14,18 @@ public:
         this->bigSide = bigSide;
     }
 
-    float getArea() override
+    float getArea()
     {
         return smallSide * bigSide;
     }
 
-    float getPerimeter() override
+    float getPerimeter()
     {
         return 2 * (smallSide + bigSide);
+    }
+
+    string getName()
+    {
+        return "Rectangle";
     }
 };

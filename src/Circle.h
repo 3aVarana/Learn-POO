@@ -14,13 +14,18 @@ public:
         this->radius = radius;
     }
 
-    float getArea() override
+    float getArea()
     {
         return pi * radius * radius;
     }
 
-    float getPerimeter() override
+    float getPerimeter()
     {
         return 2 * pi * radius;
+    }
+
+    string getName()
+    {
+        return "Circle";
     }
 };

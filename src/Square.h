@@ -13,13 +13,18 @@ public:
         this->side = side;
     }
 
-    float getArea() override
+    float getArea()
     {
         return side * side;
     }
 
-    float getPerimeter() override
+    float getPerimeter()
     {
         return 4 * side;
+    }
+
+    string getName()
+    {
+        return "Square";
     }
 };

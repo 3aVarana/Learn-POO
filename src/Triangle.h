@@ -15,13 +15,18 @@ public:
         this->h = h;
     }
 
-    float getArea() override
+    float getArea()
     {
         return a * b / 2.0;
     }
-    
-    float getPerimeter() override
+
+    float getPerimeter()
     {
         return a + b + h;
+    }
+
+    string getName()
+    {
+        return "Triangle";
     }
 };

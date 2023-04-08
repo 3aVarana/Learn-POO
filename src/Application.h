@@ -27,6 +27,7 @@ public:
 
         for (Figure *figure : figures)
         {
+            cout << "Name: " << figure->getName() << endl;
             cout << "Area: " << figure->getArea() << endl;
             cout << "Perimeter: " << (*figure).getPerimeter() << endl;
         }
