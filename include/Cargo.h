@@ -1,9 +1,12 @@
 #pragma once
 #include "Flight.h"
+#include "Package.h"
+#include <vector>
 
 class Cargo : public Flight
 {
 private:
-    /* data */
+    vector<Package> packages;
+
 public:
 };
