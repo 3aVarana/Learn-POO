@@ -8,5 +8,7 @@ class Flight
 {
 private:
     Airplane *assignedAirplane;
+    Pilot *pilot, *copilot;
+
 public:
 };
