@@ -7,7 +7,8 @@
 class Flight
 {
 private:
-    string origin, destination, scheduledDatetime;
+    string origin, destination, departureTime, arrivalTime;
+    float distance;
     Airplane *assignedAirplane;
     Pilot *pilot, *copilot;
 
