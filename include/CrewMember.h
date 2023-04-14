@@ -1,14 +1,12 @@
 #pragma once
+#include "Person.h"
 #include <string>
 #include <vector>
 using namespace std;
 
-class CrewMember
+class CrewMember : public Person
 {
 private:
-    int identifier;
-    string fullname;
-    int age;
     vector<string> habilities;
 
 public:

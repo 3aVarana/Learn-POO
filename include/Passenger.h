@@ -1,13 +1,11 @@
 #pragma once
+#include "Person.h"
 #include <string>
 using namespace std;
 
-class Passenger
+class Passenger : public Person
 {
 private:
-    int identifier;
-    string fullname;
-    int age;
     float miles;
     bool isPremium;
 

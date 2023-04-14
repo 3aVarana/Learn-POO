@@ -21,4 +21,14 @@ public:
     Airplane()
     {
     }
+
+    bool isActive()
+    {
+        return currentStatus == Status::active;
+    }
+
+    int getIdentifier()
+    {
+        return identifier;
+    }
 };
