@@ -21,6 +21,44 @@ private:
 public:
     void showMenu()
     {
+        int option;
+        do
+        {
+            cout << endl;
+            cout << "1. Add airplane" << endl;
+            cout << "2. Add pilot" << endl;
+            cout << "3. Add crew member" << endl;
+            cout << "4. Add passenger" << endl;
+
+            cout << "0. Exit" << endl;
+            cin >> option;
+
+            switch (option)
+            {
+            case 1:
+                addNewAirplane();
+                break;
+            case 2:
+                addNewPilot();
+                break;
+            case 3:
+                addNewCrewMember();
+                break;
+            case 4:
+                addNewPassenger();
+                break;
+
+            case 0:
+                cout << "Adión" << endl;
+                break;
+            default:
+                cout << "Opciónn inválida" << endl;
+            }
+        } while (option != 0);
+    }
+
+    void addNewAirplane()
+    {
     }
 
     void addNewPilot()
@@ -30,13 +68,17 @@ public:
         // pilots.push_back(p);
     }
 
-    void addCrewMember()
+    void addNewCrewMember()
     {
         // cin>> atributos
         // do
         // {
         // cin >> ability;
         // } while (ability != "");
+    }
+
+    void addNewPassenger()
+    {
     }
 
     void addFlight()

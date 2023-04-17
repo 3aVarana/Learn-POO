@@ -9,6 +9,7 @@ class Commercial : public Flight
 private:
     vector<Passenger *> passengers;
     vector<CrewMember *> cabinCrew;
+    float ticketCost;
 
 public:
     int getCabinCrewNumber()
