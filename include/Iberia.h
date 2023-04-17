@@ -94,11 +94,28 @@ public:
 
     void addNewCrewMember()
     {
-        // cin>> atributos
-        // do
-        // {
-        // cin >> ability;
-        // } while (ability != "");
+        int identifier;
+        string fullname;
+        int age;
+        string ability;
+
+        cout << "Enter crew member's identifier: ";
+        cin >> identifier;
+        cout << "Enter crew member's fullname: ";
+        cin >> fullname;
+        cout << "Enter crew member's age: ";
+        cin >> age;
+
+        CrewMember *newCrewMember = new CrewMember(identifier, fullname, age);
+
+        cout << "Enter crew member's abilities: ";
+        do
+        {
+            cin >> ability;
+            newCrewMember->addAbility(ability);
+        } while (ability != "");
+
+        crewMembers.push_back(newCrewMember);
     }
 
     void addNewPassenger()
