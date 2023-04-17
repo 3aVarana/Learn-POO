@@ -75,9 +75,21 @@ public:
 
     void addNewPilot()
     {
-        // cin>> atributos
-        // Pilot *p = new Pilot(a, b, c , d);
-        // pilots.push_back(p);
+        int identifier;
+        string fullname;
+        int age;
+        int experienceYears;
+
+        cout << "Enter pilot's identifier: ";
+        cin >> identifier;
+        cout << "Enter pilot's fullname: ";
+        cin >> fullname;
+        cout << "Enter pilot's age: ";
+        cin >> age;
+        cout << "Enter pilot's experience years: ";
+        cin >> experienceYears;
+
+        pilots.push_back(new Pilot(identifier, fullname, age, experienceYears));
     }
 
     void addNewCrewMember()
