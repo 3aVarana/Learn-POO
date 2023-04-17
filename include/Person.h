@@ -16,4 +16,13 @@ public:
         this->fullname = fullname;
         this->age = age;
     }
+
+    int getIdentifier()
+    {
+        return id;
+    }
+    string getFullname()
+    {
+        return fullname;
+    }
 };

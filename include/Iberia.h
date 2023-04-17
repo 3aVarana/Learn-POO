@@ -31,6 +31,8 @@ public:
             cout << "2. Add pilot" << endl;
             cout << "3. Add crew member" << endl;
             cout << "4. Add passenger" << endl;
+            cout << "5. Create new flight" << endl;
+            cout << "6. Assign pilot and copilot to flight" << endl;
 
             cout << "0. Exit" << endl;
             cin >> option;
@@ -48,6 +50,12 @@ public:
                 break;
             case 4:
                 addNewPassenger();
+                break;
+            case 5:
+                addFlight();
+                break;
+            case 6:
+                assignPilotToFlight();
                 break;
 
             case 0:
@@ -167,9 +175,9 @@ public:
         }
         cin >> airplanePos;
 
-        if (airplanePos < 0 && airplanePos >= airplanes.size())
+        if (airplanePos < 0 || airplanePos >= airplanes.size())
         {
-            cout << "Invalid option";
+            cout << "Invalid option" << endl;
             return;
         }
 
@@ -205,7 +213,7 @@ public:
         }
 
         char pilotOption;
-        cout << "Desea añadir piloto y copiloto? Y/N";
+        cout << "Do you want to add pilot and copilot? Y/N";
         cin >> pilotOption;
         pilotOption = toupper(pilotOption);
 
@@ -218,6 +226,68 @@ public:
 
     void addPilotTo(Flight *flight)
     {
+        int pilotPos, copilotPos;
+        cout << "Select a pilot and copilot: " << endl;
+        for (int i = 0; i < pilots.size(); i++)
+        {
+            cout << "[" << i << "]" << pilots[i]->getIdentifier() << " " << pilots[i]->getFullname() << endl;
+        }
+        cin >> pilotPos >> copilotPos;
+
+        if (pilotPos < 0 || pilotPos >= pilots.size())
+        {
+            cout << "Invalid option" << endl;
+            return;
+        }
+        if (copilotPos < 0 || copilotPos >= pilots.size())
+        {
+            cout << "Invalid option" << endl;
+            return;
+        }
+        if (pilotPos == copilotPos)
+        {
+            cout << "Invalid option" << endl;
+            return;
+        }
+
+        flight->setPilot(pilots[pilotPos]);
+        flight->setCopilot(pilots[copilotPos]);
+    }
+
+    void assignPilotToFlight()
+    {
+        int flightPos;
+        cout << "Select a flight: " << endl;
+        for (int i = 0; i < flights.size(); i++)
+        {
+            cout << "[" << i << "]" << flights[i]->getIdentifier() << " " << pilots[i]->getFullname() << endl;
+        }
+        cin >> flightPos;
+
+        if (flightPos < 0 || flightPos >= flights.size())
+        {
+            cout << "Invalid option" << endl;
+            return;
+        }
+
+        Flight *selectedFlight = flights[flightPos];
+        if (selectedFlight->hasPilot())
+        {
+            char assignOption;
+            cout << "This flight has already assigned apilot and copilot" << endl;
+            cout << "Do you want to assign new ones? Y/N: ";
+            cin >> assignOption;
+            assignOption = toupper(assignOption);
+
+            if (assignOption == 'Y')
+            {
+                addPilotTo(selectedFlight);
+            }
+        }
+        else
+        {
+            addPilotTo(selectedFlight);
+        }
     }
 
     void addCrewMember()
