@@ -52,13 +52,25 @@ public:
                 cout << "Adión" << endl;
                 break;
             default:
-                cout << "Opciónn inválida" << endl;
+                cout << "Invalid option" << endl;
             }
         } while (option != 0);
     }
 
     void addNewAirplane()
     {
+        int identifier;
+        string manufacturer;
+        string model;
+
+        cout << "Enter airplane's identifier: ";
+        cin >> identifier;
+        cout << "Enter airplane's manufacturer: ";
+        cin >> manufacturer;
+        cout << "Enter airplane's model: ";
+        cin >> model;
+
+        airplanes.push_back(new Airplane());
     }
 
     void addNewPilot()
@@ -137,6 +149,30 @@ public:
             catch (exception e)
             {
             }
+        }
+    }
+
+    ~Iberia()
+    {
+        for (Flight *f : flights)
+        {
+            delete f;
+        }
+        for (Pilot *p : pilots)
+        {
+            delete p;
+        }
+        for (CrewMember *c : crewMembers)
+        {
+            delete c;
+        }
+        for (Passenger *p : passengers)
+        {
+            delete p;
+        }
+        for (Airplane *a : airplanes)
+        {
+            delete a;
         }
     }
 };
