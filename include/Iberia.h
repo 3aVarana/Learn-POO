@@ -7,6 +7,7 @@
 #include "Commercial.h"
 #include "Airplane.h"
 #include <iostream>
+#include <cctype>
 using namespace std;
 
 class Iberia
@@ -120,6 +121,22 @@ public:
 
     void addNewPassenger()
     {
+        int identifier;
+        string fullname;
+        int age;
+        char premium;
+
+        cout << "Enter passenger's identifier: ";
+        cin >> identifier;
+        cout << "Enter passenger's fullname: ";
+        cin >> fullname;
+        cout << "Enter passenger's age: ";
+        cin >> age;
+        cout << "Is a premium passager? Y/N: ";
+        cin >> premium;
+        premium = toupper(premium);
+
+        passengers.push_back(new Passenger(identifier, fullname, age, premium == 'Y'));
     }
 
     void addFlight()

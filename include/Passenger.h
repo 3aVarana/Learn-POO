@@ -10,4 +10,9 @@ private:
     bool isPremium;
 
 public:
+    Passenger(int identifier, string fullname, int age, bool isPremium) : Person(identifier, fullname, age)
+    {
+        this->miles = 0;
+        this->isPremium = isPremium;
+    }
 };
