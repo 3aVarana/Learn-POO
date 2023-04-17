@@ -4,6 +4,12 @@
 #include "Pilot.h"
 #include "CrewMember.h"
 
+enum FlightType
+{
+    commercial, // 0
+    cargo       // 1
+};
+
 class Flight
 {
 protected:
@@ -11,6 +17,7 @@ protected:
     float distance;
     Airplane *assignedAirplane;
     Pilot *pilot, *copilot;
+    FlightType type;
 
 public:
     Flight(string origin, string destination, string departureTime, string arrivalTime, float distance, Airplane *assignedAirplane)
@@ -49,5 +56,19 @@ public:
     string getIdentifier()
     {
         return origin + " " + destination;
+    }
+
+    int getType()
+    {
+        return type;
+    }
+
+    virtual float getBenefit() = 0;
+
+    /*
+    Ahora que la clase Flight tiene un método abstracto es necesario declararle un constructor virtual en la clase
+     */
+    virtual ~Flight()
+    {
     }
 };

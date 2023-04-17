@@ -65,7 +65,7 @@ public:
                 break;
 
             case 0:
-                cout << "Adión" << endl;
+                cout << "Adiós" << endl;
                 break;
             default:
                 cout << "Invalid option" << endl;
@@ -280,7 +280,7 @@ public:
         if (selectedFlight->hasPilot())
         {
             char assignOption;
-            cout << "This flight has already assigned apilot and copilot" << endl;
+            cout << "This flight has already assigned ap ilot and copilot" << endl;
             cout << "Do you want to assign new ones? Y/N: ";
             cin >> assignOption;
             assignOption = toupper(assignOption);
@@ -328,10 +328,51 @@ public:
         }
     }
 
+    void buyTicket()
+    {
+        int flightPos, passengerPos;
+        for (int i = 0; i < flights.size(); i++)
+        {
+            if (flights[i]->getType() == FlightType::commercial)
+            {
+                cout << "[" << i << "]" << flights[i]->getIdentifier() << endl;
+            }
+        }
+        cin >> flightPos;
+
+        if (flightPos < 0 || flightPos >= flights.size())
+        {
+            cout << "Invalid option" << endl;
+            return;
+        }
+
+        // flights[flightPos]->showInfo();
+
+        for (int i = 0; i < passengers.size(); i++)
+        {
+            cout << "[" << i << "]" << passengers[i]->getIdentifier() << endl;
+        }
+        cin >> passengerPos;
+
+        if (passengerPos < 0 || passengerPos >= passengers.size())
+        {
+            cout << "Invalid option" << endl;
+            return;
+        }
+
+        Commercial *c = (Commercial *)flights[flightPos];
+        c->addPassenger(passengers[passengerPos]);
+        // passengers[passengerPos]->addMiles(c->getMiles());
+    }
+
     ~Iberia()
     {
         for (Flight *f : flights)
         {
+            /*
+            Ahora que la clase Flight tiene un método abstracto es necesario declararle un constructor virtual
+            Caso contrario dará una excepción al intentar liberar la memoria
+            */
             delete f;
         }
         for (Pilot *p : pilots)

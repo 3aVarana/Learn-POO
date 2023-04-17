@@ -15,6 +15,7 @@ public:
     Commercial(string origin, string destination, string departureTime, string arrivalTime, float distance, Airplane *assignedAirplane, float ticketCost) : Flight(origin, destination, departureTime, arrivalTime, distance, assignedAirplane)
     {
         this->ticketCost = ticketCost;
+        this->type = FlightType::commercial;
     }
 
     int getCabinCrewNumber()
@@ -35,5 +36,10 @@ public:
     float getTicketCost()
     {
         return ticketCost;
+    }
+
+    float getBenefit()
+    {
+        return 0.0f;
     }
 };
