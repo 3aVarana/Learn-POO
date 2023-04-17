@@ -5,6 +5,7 @@
 #include "Passenger.h"
 #include "Flight.h"
 #include "Commercial.h"
+#include "Cargo.h"
 #include "Airplane.h"
 #include <iostream>
 #include <cctype>
@@ -124,7 +125,7 @@ public:
         int identifier;
         string fullname;
         int age;
-        char premium;
+        char premiumOption;
 
         cout << "Enter passenger's identifier: ";
         cin >> identifier;
@@ -133,31 +134,30 @@ public:
         cout << "Enter passenger's age: ";
         cin >> age;
         cout << "Is a premium passager? Y/N: ";
-        cin >> premium;
-        premium = toupper(premium);
+        cin >> premiumOption;
+        premiumOption = toupper(premiumOption);
 
-        passengers.push_back(new Passenger(identifier, fullname, age, premium == 'Y'));
+        passengers.push_back(new Passenger(identifier, fullname, age, premiumOption == 'Y'));
     }
 
     void addFlight()
     {
         string origin, destination, departureTime, arrivalTime;
         float distance;
-        int airplanePos;
+        int airplanePos, flightType;
 
-        cout << "Ingrese origen: ";
+        cout << "Enter origin: ";
         cin >> origin;
-        cout << "Ingrese destino: ";
+        cout << "Enter destination: ";
         cin >> destination;
-
-        cout << "Ingrese fecha de partida: ";
+        cout << "Enter departure date: ";
         cin >> departureTime;
-        cout << "Ingrese fecha de llegada: ";
+        cout << "Enter arrival date: ";
         cin >> arrivalTime;
-
-        cout << "Ingrese distancia en millas: ";
+        cout << "Enter distance(miles): ";
         cin >> distance;
 
+        cout << "Select an airplane to assign to flight: " << endl;
         for (int i = 0; i < airplanes.size(); i++)
         {
             if (airplanes[i]->isActive())
@@ -166,20 +166,58 @@ public:
             }
         }
         cin >> airplanePos;
+
         if (airplanePos < 0 && airplanePos >= airplanes.size())
         {
-            cout << "Opcion invalida";
+            cout << "Invalid option";
             return;
         }
 
-        Flight *flight = new Flight(origin, destination, departureTime, arrivalTime, distance, airplanes[airplanePos]);
+        cout << "Enter flight's type. (1)Commercial - (2)Cargo" << endl;
+        cin >> flightType;
 
-        char addPilot;
-        cout << "Desea añadir piloto y copiloto? Y/N";
-        cin >> addPilot;
-        if (addPilot == 'Y')
+        Flight *flight;
+        switch (flightType)
         {
+        case 1:
+            float ticketCost;
+            cout << "Enter ticket cost: ";
+            cin >> ticketCost;
+            flight = new Commercial(origin,
+                                    destination,
+                                    departureTime,
+                                    arrivalTime,
+                                    distance,
+                                    airplanes[airplanePos],
+                                    ticketCost);
+            break;
+        case 2:
+            flight = new Cargo(origin,
+                               destination,
+                               departureTime,
+                               arrivalTime,
+                               distance,
+                               airplanes[airplanePos]);
+            break;
+        default:
+            cout << "Invalid option";
+            return;
         }
+
+        char pilotOption;
+        cout << "Desea añadir piloto y copiloto? Y/N";
+        cin >> pilotOption;
+        pilotOption = toupper(pilotOption);
+
+        if (pilotOption == 'Y')
+        {
+            addPilotTo(flight);
+        }
+        flights.push_back(flight);
+    }
+
+    void addPilotTo(Flight *flight)
+    {
     }
 
     void addCrewMember()

@@ -12,6 +12,11 @@ private:
     float ticketCost;
 
 public:
+    Commercial(string origin, string destination, string departureTime, string arrivalTime, float distance, Airplane *assignedAirplane, float ticketCost) : Flight(origin, destination, departureTime, arrivalTime, distance, assignedAirplane)
+    {
+        this->ticketCost = ticketCost;
+    }
+
     int getCabinCrewNumber()
     {
         return cabinCrew.size();
