@@ -70,7 +70,7 @@ public:
         cout << "Enter airplane's model: ";
         cin >> model;
 
-        airplanes.push_back(new Airplane());
+        airplanes.push_back(new Airplane(identifier, manufacturer, model));
     }
 
     void addNewPilot()

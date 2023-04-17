@@ -18,8 +18,12 @@ private:
     Status currentStatus;
 
 public:
-    Airplane()
+    Airplane(int identifier, string manufacturer, string model)
     {
+        this->identifier = identifier;
+        this->manufacturer = manufacturer;
+        this->model = model;
+        this->currentStatus = Status::active;
     }
 
     bool isActive()
