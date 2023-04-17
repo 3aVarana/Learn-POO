@@ -31,4 +31,9 @@ public:
     {
         passengers.push_back(passenger);
     }
+
+    float getTicketCost()
+    {
+        return ticketCost;
+    }
 };
