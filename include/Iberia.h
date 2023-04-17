@@ -34,6 +34,8 @@ public:
             cout << "5. Create new flight" << endl;
             cout << "6. Assign pilot and copilot to flight" << endl;
 
+            cout << "11. Show airplanes by state" << endl;
+
             cout << "0. Exit" << endl;
             cin >> option;
 
@@ -56,6 +58,10 @@ public:
                 break;
             case 6:
                 assignPilotToFlight();
+                break;
+
+            case 11:
+                showAirplaneByState();
                 break;
 
             case 0:
@@ -287,6 +293,22 @@ public:
         else
         {
             addPilotTo(selectedFlight);
+        }
+    }
+
+    void showAirplaneByState()
+    {
+        int selectedState;
+
+        cout << "Enter state to search. (1)Active - (2)In maintenance - (3)Out of service" << endl;
+        cin >> selectedState;
+
+        for (Airplane *a : airplanes)
+        {
+            if (selectedState == a->getState())
+            {
+                a->showInfo();
+            }
         }
     }
 
